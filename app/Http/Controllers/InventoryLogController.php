@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\InventoryLog;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class InventoryLogController extends Controller
@@ -11,7 +13,8 @@ class InventoryLogController extends Controller
      */
     public function index()
     {
-        //
+        $logs = InventoryLog::with('product')->get();
+        return view('inventory_logs.index', compact('logs'));
     }
 
     /**
@@ -19,7 +22,8 @@ class InventoryLogController extends Controller
      */
     public function create()
     {
-        //
+        $products = Product::all();
+        return view('inventory_logs.create', compact('products'));
     }
 
     /**
@@ -27,7 +31,25 @@ class InventoryLogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'product_id' => 'required|exists:products,id',
+            'change_type' => 'required|in:addition,reduction',
+            'quantity' => 'required|integer|min:1',
+            'remarks' => 'nullable|string|max:255',
+        ]);
+
+        InventoryLog::create($validated);
+
+        // Update product stock
+        $product = Product::findOrFail($validated['product_id']);
+        if ($validated['change_type'] == 'addition') {
+            $product->stock_quantity += $validated['quantity'];
+        } else {
+            $product->stock_quantity -= $validated['quantity'];
+        }
+        $product->save();
+
+        return redirect()->route('inventory-logs.index');
     }
 
     /**

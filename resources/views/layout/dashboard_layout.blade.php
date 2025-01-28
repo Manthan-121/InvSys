@@ -138,23 +138,23 @@
             </li><!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav1" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-layout-text-window-reverse"></i><span>Product</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <ul id="tables-nav1" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="#">
+                        <a href="{{ route('products.index') }}">
                             <i class="bi bi-circle"></i><span>View Products</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('products.create') }}">
                             <i class="bi bi-circle"></i><span>Add Product</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('categories.index') }}">
                             <i class="bi bi-circle"></i><span>Categories</span>
                         </a>
                     </li>
@@ -162,95 +162,95 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav2" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-layout-text-window-reverse"></i><span>Suppliers</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <ul id="tables-nav2" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="">
+                        <a href="{{ route('suppliers.index') }}">
                             <i class="bi bi-circle"></i><span>View Suppliers</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{ route('suppliers.create') }}">
                             <i class="bi bi-circle"></i><span>Add Suppliers</span>
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav3" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-layout-text-window-reverse"></i><span>Customers</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <ul id="tables-nav3" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="#">
+                        <a href="{{ route('customers.index') }}">
                             <i class="bi bi-circle"></i><span>View Customers</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('customers.create') }}">
                             <i class="bi bi-circle"></i><span>Add Customers</span>
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav4" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-layout-text-window-reverse"></i><span>Sales</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <ul id="tables-nav4" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="#">
+                        <a href="{{ route('sales.index') }}">
                             <i class="bi bi-circle"></i><span>View Sales</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('sales.create') }}">
                             <i class="bi bi-circle"></i><span>Add Sales</span>
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav5" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-layout-text-window-reverse"></i><span>Purchases</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <ul id="tables-nav5" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="#">
+                        <a href="{{ route('purchases.index') }}">
                             <i class="bi bi-circle"></i><span>View Purchases</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('purchases.create') }}">
                             <i class="bi bi-circle"></i><span>Add Purchases</span>
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav6" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-layout-text-window-reverse"></i><span>Reports</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <ul id="tables-nav6" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="#">
+                        <a href="{{ route('reports.sales') }}">
                             <i class="bi bi-circle"></i><span>Sales Report</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('reports.purchases') }}">
                             <i class="bi bi-circle"></i><span>Purchase Report</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('reports.inventory') }}">
                             <i class="bi bi-circle"></i><span>Inventory Report</span>
                         </a>
                     </li>
@@ -258,7 +258,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="{{ route('inventory-logs.index') }}">
                     <i class="bi bi-grid"></i>
                     <span>Inventory Logs</span>
                 </a>
