@@ -51,9 +51,11 @@ class CustomerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Customer $customer)
+    // public function edit(Customer $customer)
+    public function edit()
     {
-        return view('customers.edit', compact('customer'));
+        return view('customers.edit');
+        // return view('customers.edit', compact('customer'));
     }
 
     /**

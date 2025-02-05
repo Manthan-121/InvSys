@@ -31,10 +31,11 @@ class CategoryController extends Controller
     {
         $validated = $request->validate([
             'category_name' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
         ]);
 
         Category::create($validated);
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.index')->with('success', 'Category created successfully.');
     }
 
     /**
