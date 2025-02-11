@@ -49,25 +49,38 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        //
-    }
+    public function edit(string $id) {}
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'category_name' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+        ]);
+
+        // // Find category by ID
+        $category = Category::findOrFail($id);
+
+        // // Update category details
+        $category->update($validated);
+
+        // Redirect back with success message
+        return response()->json([
+            'message' => 'Category updated successfully!'
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
+        $category = Category::findOrFail($id);
         $category->delete();
-        return redirect()->route('categories.index');
+    
+        return response()->json(['message' => 'Category deleted successfully!']);
     }
 }

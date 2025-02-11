@@ -26,7 +26,10 @@
     <link href="{{ asset('assets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/DataTable/datatables.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/DataTable/datatables.min.css') }}" rel="stylesheet">
+  
+
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
@@ -291,10 +294,18 @@
     <script src="{{ asset('assets/vendor/chart.js/chart.umd.js') }}"></script>
     <script src="{{ asset('assets/vendor/echarts/echarts.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/quill/quill.js') }}"></script>
-    <script src="{{ asset('assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ asset('assets/js/DataTables/datatables.js') }}"></script>
+    <script src="{{ asset('assets/js/DataTables/datatables.min.js') }}"></script>
+
     <script src="{{ asset('assets/vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
 
+    <script>
+        $(document).ready( function () {
+        $('#myTable').DataTable();
+    } );
+    </script>
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
